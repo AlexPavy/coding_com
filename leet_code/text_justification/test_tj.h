@@ -3,6 +3,6 @@
 
 #include <tuple>
 
-std::tuple<int, int> playTest(const std::string &input);
+tuple<int, int> testFullJustify(const string &input);
 
 #endif //TETRIS_S_TEST_TETRIS_S_H
