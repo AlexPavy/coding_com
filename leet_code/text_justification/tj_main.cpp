@@ -19,9 +19,27 @@ vector<string> Solution::fullJustify(vector<std::string> &words, int maxWidth) {
         } else {
             res.push_back(justifyLine(c_words, maxWidth));
             c_min_size = 0;
+            c_words.clear();
+            c_words.push_back(word);
+            c_min_size += (int) word.size();
         }
-        cout << word << endl;
     }
+    if (!c_words.empty()) {
+        res.push_back(justifyLastLine(c_words, maxWidth));
+    }
+    return res;
+}
+
+string justifyLastLine(vector<string> &words, int maxWidth) {
+    int gaps = (int) words.size() - 1;
+    string res;
+    for (int i = 0; i < gaps; i++) {
+        res += words[i];
+        res += ' ';
+    }
+    res += words[gaps];
+    res += string(maxWidth - res.size(), ' ');
+    return res;
 }
 
 string justifyLine(vector<string> &words, int maxWidth) {
@@ -42,7 +60,20 @@ string justifyLine(vector<string> &words, int maxWidth) {
     return res;
 }
 
+void printText(vector<string> &words) {
+    cout << "Text: " << endl;
+    for (string &word: words) {
+        cout << word << endl;
+    }
+}
+
 int main() {
-    cout << "c++ version: " << __cplusplus << endl;
+    vector<string> words = {"This", "is", "an", "example", "of", "text", "justification."};
+    Solution sol = Solution();
+    auto res = sol.fullJustify(
+            words,
+            16
+    );
+    printText(res);
     return 0;
 }

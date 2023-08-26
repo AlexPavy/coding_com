@@ -2,17 +2,19 @@
 #include "tj_main.h"
 
 #include <catch2/catch_test_macros.hpp>
-#include <tuple>
 
 using namespace std;
 
 TEST_CASE("justify 1", "[justifyTest]") {
-    auto [height, nbFullRows] = testFullJustify("Q0");
-    REQUIRE(height == 2);
-    REQUIRE(nbFullRows == 0);
+    vector<string> res = testFullJustify(
+            {"This", "is", "an", "example", "of", "text", "justification."},
+            16
+    );
+    REQUIRE(res[0] == "hi");
+    REQUIRE(res[1] == "ok");
 }
 
-tuple<int, int> testFullJustify(const string &input) {
+vector<string> testFullJustify(vector<string> &&words, int maxWidth) {
     Solution sol = Solution();
-    sol.fullJustify();
+    return sol.fullJustify(words, maxWidth);
 }

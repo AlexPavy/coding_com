@@ -11,4 +11,6 @@ public:
 
 string justifyLine(vector<string> &words, int maxWidth);
 
+string justifyLastLine(vector<string> &words, int maxWidth);
+
 #endif
