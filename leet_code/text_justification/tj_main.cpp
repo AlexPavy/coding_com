@@ -44,7 +44,15 @@ string justifyLastLine(vector<string> &words, int maxWidth) {
 
 string justifyLine(vector<string> &words, int maxWidth) {
     int gaps = (int) words.size() - 1;
-    int wa = maxWidth - gaps;
+    int t_size = 0;
+    for (string &word: words) {
+        t_size += (int) word.size();
+    }
+    int wa = maxWidth - t_size;
+    if (gaps == 0) {
+        return words[0] + string(wa, ' ');
+    }
+
     int spa = wa / gaps;
     int spa_rem = wa % gaps;
     string res;
