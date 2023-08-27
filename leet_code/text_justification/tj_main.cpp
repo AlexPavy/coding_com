@@ -67,13 +67,3 @@ void printText(vector<string> &words) {
     }
 }
 
-int main() {
-    vector<string> words = {"This", "is", "an", "example", "of", "text", "justification."};
-    Solution sol = Solution();
-    auto res = sol.fullJustify(
-            words,
-            16
-    );
-    printText(res);
-    return 0;
-}

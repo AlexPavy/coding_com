@@ -13,4 +13,6 @@ string justifyLine(vector<string> &words, int maxWidth);
 
 string justifyLastLine(vector<string> &words, int maxWidth);
 
+void printText(vector<string> &words);
+
 #endif
