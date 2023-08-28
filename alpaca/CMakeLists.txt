@@ -3,7 +3,7 @@ project(text_justification)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(coding_com/leet_code/text_justification)
+include_directories(coding_com/alpaca)
 
 Include(FetchContent)
 
