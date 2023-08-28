@@ -1,5 +1,5 @@
-#ifndef TETRIS_S_TEST_TETRIS_S_H
-#define TETRIS_S_TEST_TETRIS_S_H
+#ifndef TEST_TJ_H
+#define TEST_TJ_H
 
 #include <vector>
 #include <string>

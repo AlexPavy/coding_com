@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef TJ_MAIN_H
+#define TJ_MAIN_H
 
 #include <string>
 using namespace std;

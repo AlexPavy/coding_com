@@ -5,12 +5,21 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(coding_com/leet_code/text_justification)
 
-add_executable(text_justification
-        tj_start.h tj_start.cpp
-        tj_main.h tj_main.cpp
-        )
-
 Include(FetchContent)
+
+FetchContent_Declare(
+        alpaca
+        GIT_REPOSITORY https://github.com/marpaia/alpaca-trade-api-cpp.git
+        GIT_TAG v0.0.3
+)
+
+FetchContent_MakeAvailable(Catch2)
+
+add_executable(alpaca_d
+        alp_start.h alp_start.cpp
+        alp_main.h alp_main.cpp
+        )
+target_link_libraries(alpaca_d PRIVATE alpaca::Client)
 
 FetchContent_Declare(
         Catch2
@@ -21,6 +30,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(tests
-        test_tj.cpp test_tj.h
-        tj_main.cpp tj_main.h)
+        alp_test.cpp alp_test.h
+        alp_main.cpp alp_main.h)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
